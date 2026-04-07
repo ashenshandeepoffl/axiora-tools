@@ -1,0 +1,199 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import BmiCalculatorComponent from "@/components/tools/BmiCalculator.tsx";
+
+// MAGIC: Automatically adds this to the homepage directory
+export const toolMeta = {
+    id: "bmi-calc",
+    name: "BMI Calculator",
+    desc: "Analyze your Body Mass Index quickly with this private, client-side calculator.",
+    category: "Health",
+    icon: "Calculator", // Using the Calculator icon from Lucide
+};
+---
+
+<Layout
+    title={`${toolMeta.name} | Premium Tools by Axiora`}
+    description={toolMeta.desc}
+>
+    <div class="container mx-auto px-4 py-8 md:py-16">
+        {/* SaaS Back Button */}
+        <div class="max-w-5xl mx-auto mb-12">
+            <a
+                href="/"
+                class="inline-flex items-center gap-3 text-foreground/50 hover:text-primary font-semibold text-sm tracking-wide transition-all group w-fit outline-none focus-visible:ring-4 focus-visible:ring-primary/30 rounded-full pr-6 bg-white/50 backdrop-blur-md border border-white saas-shadow hover:saas-shadow-hover"
+            >
+                <div
+                    class="w-10 h-10 bg-white rounded-full flex items-center justify-center saas-shadow group-hover:bg-primary/5 transition-colors"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="group-hover:-translate-x-1 transition-transform duration-300"
+                    >
+                        <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                </div>
+                Back to Directory
+            </a>
+        </div>
+
+        {/* The React Component */}
+        <BmiCalculatorComponent client:only="react" />
+
+        {/* Premium SEO / Context Block */}
+        <article
+            class="max-w-5xl mx-auto mt-24 flex flex-col gap-12 glass-card rounded-[2.5rem] p-10 md:p-16 relative overflow-hidden"
+        >
+            <div
+                class="absolute -top-32 -right-32 w-96 h-96 bg-primary/5 blur-3xl rounded-full pointer-events-none"
+            >
+            </div>
+
+            <div class="space-y-4 relative z-10 max-w-3xl">
+                <h2
+                    class="text-3xl md:text-4xl font-extrabold tracking-tight text-foreground"
+                >
+                    Understanding the <span class="text-gradient"
+                        >BMI Metric.</span
+                    >
+                </h2>
+                <p
+                    class="text-lg text-foreground/60 leading-relaxed font-medium"
+                >
+                    Body Mass Index (BMI) is a widely used screening tool that
+                    compares your height and weight to estimate your total body
+                    fat. While it does not measure body fat directly, it serves
+                    as a highly reliable indicator of metabolic health risks
+                    across large populations.
+                </p>
+            </div>
+
+            {
+                /* The BMI Chart Image seamlessly integrated into the luxury theme */
+            }
+            <div
+                class="relative w-full rounded-[1.5rem] overflow-hidden saas-shadow border border-white my-4 relative z-10"
+            >
+                <div
+                    class="absolute inset-0 bg-gradient-saas opacity-5 pointer-events-none"
+                >
+                </div>
+                <img
+                    src="/BMI_scale_chart_202604072114.png"
+                    alt="Standard BMI Scale Chart"
+                    class="w-full h-auto object-cover"
+                />
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+                {/* Info Card 1 */}
+                <div
+                    class="flex flex-col gap-4 bg-background/50 rounded-[1.5rem] p-8 border border-border/50 hover:border-primary/20 transition-colors group"
+                >
+                    <div
+                        class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-primary font-extrabold text-xl saas-shadow mb-2 group-hover:scale-110 transition-transform"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            ><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg
+                        >
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-foreground tracking-tight"
+                    >
+                        The Global Standard Categories
+                    </h3>
+                    <ul
+                        class="text-base text-foreground/60 font-medium leading-relaxed space-y-3 mt-2"
+                    >
+                        <li
+                            class="flex justify-between items-center border-b border-border/50 pb-2"
+                        >
+                            <span>Underweight</span>
+                            <strong class="text-foreground">Below 18.5</strong>
+                        </li>
+                        <li
+                            class="flex justify-between items-center border-b border-border/50 pb-2"
+                        >
+                            <span>Optimal Weight</span>
+                            <strong class="text-secondary">18.5 – 24.9</strong>
+                        </li>
+                        <li
+                            class="flex justify-between items-center border-b border-border/50 pb-2"
+                        >
+                            <span>Overweight</span>
+                            <strong class="text-orange-500">25.0 – 29.9</strong>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>Obese</span>
+                            <strong class="text-destructive"
+                                >30.0 and above</strong
+                            >
+                        </li>
+                    </ul>
+                </div>
+
+                {/* Info Card 2 */}
+                <div
+                    class="flex flex-col gap-4 bg-background/50 rounded-[1.5rem] p-8 border border-border/50 hover:border-secondary/20 transition-colors group"
+                >
+                    <div
+                        class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-secondary font-extrabold text-xl saas-shadow mb-2 group-hover:scale-110 transition-transform"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            ><circle cx="12" cy="12" r="10"></circle><line
+                                x1="12"
+                                y1="8"
+                                x2="12"
+                                y2="12"></line><line
+                                x1="12"
+                                y1="16"
+                                x2="12.01"
+                                y2="16"></line></svg
+                        >
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-foreground tracking-tight"
+                    >
+                        Limitations of the BMI System
+                    </h3>
+                    <p
+                        class="text-base text-foreground/60 font-medium leading-relaxed"
+                    >
+                        BMI is a mathematical estimate. It cannot fundamentally
+                        distinguish between muscle mass and fat mass. Therefore,
+                        highly muscular athletes may classify as "overweight" or
+                        "obese" despite having very low body fat percentages.
+                        Always consult a healthcare professional for a complete,
+                        holistic health assessment.
+                    </p>
+                </div>
+            </div>
+        </article>
+    </div>
+</Layout>

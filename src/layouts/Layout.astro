@@ -1,0 +1,512 @@
+---
+import "@/styles/global.css";
+import ScrollProgress from "@/components/ScrollProgress.tsx";
+
+interface Props {
+    title: string;
+    description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+    </head>
+    <body
+        class="min-h-screen flex flex-col font-sans antialiased pt-24 md:pt-28 selection:bg-primary selection:text-white relative overflow-x-hidden"
+    >
+        {/* Vibrant SaaS Mesh Gradient Background */}
+        <div class="fixed inset-0 z-[-1] h-full w-full bg-background">
+            {/* Top Center Indigo Glow */}
+            <div
+                class="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(79,70,229,0.08),rgba(255,255,255,0))]"
+            >
+            </div>
+            {/* Bottom Right Purple Glow */}
+            <div
+                class="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_120%_100%,rgba(124,58,237,0.08),rgba(255,255,255,0))]"
+            >
+            </div>
+            {/* Bottom Left Cyan Glow */}
+            <div
+                class="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_-20%_100%,rgba(0,194,255,0.08),rgba(255,255,255,0))]"
+            >
+            </div>
+        </div>
+
+        <ScrollProgress client:load />
+
+        {/* Premium Glass Navigation Header */}
+        <header
+            class="fixed top-0 left-0 right-0 h-20 md:h-24 glass-card z-50 flex items-center transition-all duration-300"
+        >
+            <div
+                class="container mx-auto px-6 md:px-12 flex justify-between items-center w-full"
+            >
+                {/* Brand Logo with Gradient Accent */}
+                <a
+                    href="/"
+                    class="flex items-baseline text-foreground font-bold text-2xl md:text-3xl tracking-tight transition-transform duration-300 hover:scale-[1.02] active:scale-95 origin-left relative z-[60]"
+                >
+                    Tools <span
+                        class="font-semibold text-base md:text-lg ml-2 tracking-normal text-foreground/50"
+                        >by <span class="text-gradient font-bold">Axiora</span
+                        ></span
+                    >
+                </a>
+
+                {/* DESKTOP NAVIGATION */}
+                <div class="hidden lg:flex items-center gap-10">
+                    <nav
+                        class="flex gap-8 text-[15px] font-semibold text-foreground/70 tracking-wide"
+                    >
+                        {/* Services */}
+                        <div class="relative group">
+                            <button
+                                class="flex items-center gap-1.5 py-2 hover:text-primary transition-colors"
+                            >
+                                Services
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="14"
+                                    height="14"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="group-hover:rotate-180 transition-transform duration-300"
+                                    ><path d="m6 9 6 6 6-6"></path></svg
+                                >
+                            </button>
+                            <div
+                                class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-50"
+                            >
+                                <div
+                                    class="w-60 bg-white border border-white/50 rounded-[1.25rem] saas-shadow p-2 flex flex-col gap-1 relative overflow-hidden"
+                                >
+                                    {/* Subtle internal glow */}
+                                    <div
+                                        class="absolute -top-10 -right-10 w-24 h-24 bg-primary/10 blur-2xl rounded-full"
+                                    >
+                                    </div>
+                                    <a
+                                        href="https://www.axioralabs.com/services/ai-consulting"
+                                        target="_blank"
+                                        class="px-4 py-3 hover:bg-muted rounded-xl transition-colors text-foreground font-medium hover:text-primary relative z-10"
+                                        >AI Consulting</a
+                                    >
+                                    <a
+                                        href="https://www.axioralabs.com/services/custom-software"
+                                        target="_blank"
+                                        class="px-4 py-3 hover:bg-muted rounded-xl transition-colors text-foreground font-medium hover:text-primary relative z-10"
+                                        >Custom Software</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Ecosystem */}
+                        <div class="relative group">
+                            <button
+                                class="flex items-center gap-1.5 py-2 hover:text-primary transition-colors"
+                            >
+                                Ecosystem
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="14"
+                                    height="14"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="group-hover:rotate-180 transition-transform duration-300"
+                                    ><path d="m6 9 6 6 6-6"></path></svg
+                                >
+                            </button>
+                            <div
+                                class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-50"
+                            >
+                                <div
+                                    class="w-60 bg-white border border-white/50 rounded-[1.25rem] saas-shadow p-2 flex flex-col gap-1 relative overflow-hidden"
+                                >
+                                    <div
+                                        class="absolute -top-10 -right-10 w-24 h-24 bg-secondary/10 blur-2xl rounded-full"
+                                    >
+                                    </div>
+                                    <a
+                                        href="https://www.axiora.academy/"
+                                        target="_blank"
+                                        class="px-4 py-3 hover:bg-muted rounded-xl transition-colors text-foreground font-medium hover:text-primary relative z-10"
+                                        >Axiora Academy</a
+                                    >
+                                    <a
+                                        href="https://digital.axioralab.com/"
+                                        target="_blank"
+                                        class="px-4 py-3 hover:bg-muted rounded-xl transition-colors text-foreground font-medium hover:text-primary relative z-10"
+                                        >Axiora Digital</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Education */}
+                        <div class="relative group">
+                            <button
+                                class="flex items-center gap-1.5 py-2 hover:text-primary transition-colors"
+                            >
+                                Education
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="14"
+                                    height="14"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="group-hover:rotate-180 transition-transform duration-300"
+                                    ><path d="m6 9 6 6 6-6"></path></svg
+                                >
+                            </button>
+                            <div
+                                class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-50"
+                            >
+                                <div
+                                    class="w-60 bg-white border border-white/50 rounded-[1.25rem] saas-shadow p-2 flex flex-col gap-1 relative overflow-hidden"
+                                >
+                                    <div
+                                        class="absolute -top-10 -right-10 w-24 h-24 bg-accent/10 blur-2xl rounded-full"
+                                    >
+                                    </div>
+                                    <a
+                                        href="https://www.axiorablogs.com"
+                                        target="_blank"
+                                        class="px-4 py-3 hover:bg-muted rounded-xl transition-colors text-foreground font-medium hover:text-primary relative z-10"
+                                        >Axiora Blogs</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Other Tools */}
+                        <div class="relative group">
+                            <button
+                                class="flex items-center gap-1.5 py-2 hover:text-primary transition-colors"
+                            >
+                                Other Tools
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="14"
+                                    height="14"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="group-hover:rotate-180 transition-transform duration-300"
+                                    ><path d="m6 9 6 6 6-6"></path></svg
+                                >
+                            </button>
+                            <div
+                                class="absolute top-full right-0 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-50"
+                            >
+                                <div
+                                    class="w-60 bg-white border border-white/50 rounded-[1.25rem] saas-shadow p-2 flex flex-col gap-1 relative overflow-hidden"
+                                >
+                                    <div
+                                        class="absolute -top-10 -right-10 w-24 h-24 bg-primary/10 blur-2xl rounded-full"
+                                    >
+                                    </div>
+                                    <a
+                                        href="https://quotes.axioralabs.com/"
+                                        target="_blank"
+                                        class="px-4 py-3 hover:bg-muted rounded-xl transition-colors text-foreground font-medium hover:text-primary relative z-10"
+                                        >Axiora Quotes</a
+                                    >
+                                    <a
+                                        href="https://path.axioralabs.com/"
+                                        target="_blank"
+                                        class="px-4 py-3 hover:bg-muted rounded-xl transition-colors text-foreground font-medium hover:text-primary relative z-10"
+                                        >Axiora Path</a
+                                    >
+                                    <a
+                                        href="https://games.axioralabs.com/"
+                                        target="_blank"
+                                        class="px-4 py-3 hover:bg-muted rounded-xl transition-colors text-foreground font-medium hover:text-primary relative z-10"
+                                        >Axiora Games</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+
+                    {/* SaaS Top Right CTA */}
+                    <a
+                        href="https://www.axioralabs.com"
+                        target="_blank"
+                        class="bg-primary text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-secondary saas-shadow hover:saas-shadow-hover transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
+                    >
+                        Hire Us
+                    </a>
+                </div>
+
+                {/* MOBILE MENU TOGGLE BUTTON */}
+                <button
+                    id="mobile-menu-btn"
+                    class="lg:hidden relative z-[60] p-2 text-foreground hover:text-primary transition-colors outline-none"
+                    aria-label="Toggle Menu"
+                >
+                    <svg
+                        id="icon-menu"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="28"
+                        height="28"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="transition-all duration-300"
+                        ><line x1="4" x2="20" y1="12" y2="12"></line><line
+                            x1="4"
+                            x2="20"
+                            y1="6"
+                            y2="6"></line><line x1="4" x2="20" y1="18" y2="18"
+                        ></line></svg
+                    >
+                    <svg
+                        id="icon-close"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="28"
+                        height="28"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="absolute top-2 left-2 opacity-0 scale-50 transition-all duration-300"
+                        ><path d="M18 6 6 18"></path><path d="m6 6 12 12"
+                        ></path></svg
+                    >
+                </button>
+            </div>
+        </header>
+
+        {/* FULL SCREEN MOBILE NAVIGATION OVERLAY */}
+        <div
+            id="mobile-overlay"
+            class="fixed inset-0 z-40 bg-white/95 backdrop-blur-2xl opacity-0 pointer-events-none translate-y-[-10px] transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] overflow-y-auto lg:hidden"
+        >
+            {/* Ambient glows inside mobile menu */}
+            <div
+                class="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-3xl rounded-full pointer-events-none"
+            >
+            </div>
+            <div
+                class="absolute bottom-0 left-0 w-64 h-64 bg-secondary/5 blur-3xl rounded-full pointer-events-none"
+            >
+            </div>
+
+            <div
+                class="flex flex-col pt-32 pb-12 px-8 gap-8 min-h-screen relative z-10"
+            >
+                <div class="flex flex-col gap-2 border-b border-border pb-6">
+                    <h3
+                        class="text-xs font-black text-primary uppercase tracking-widest mb-2"
+                    >
+                        Services
+                    </h3>
+                    <a
+                        href="https://www.axioralabs.com/services/ai-consulting"
+                        class="text-2xl font-bold text-foreground hover:text-primary transition-colors py-1"
+                        >AI Consulting</a
+                    >
+                    <a
+                        href="https://www.axioralabs.com/services/custom-software"
+                        class="text-2xl font-bold text-foreground hover:text-primary transition-colors py-1"
+                        >Custom Software</a
+                    >
+                </div>
+
+                <div class="flex flex-col gap-2 border-b border-border pb-6">
+                    <h3
+                        class="text-xs font-black text-secondary uppercase tracking-widest mb-2"
+                    >
+                        Ecosystem
+                    </h3>
+                    <a
+                        href="https://www.axiora.academy/"
+                        class="text-2xl font-bold text-foreground hover:text-secondary transition-colors py-1"
+                        >Axiora Academy</a
+                    >
+                    <a
+                        href="https://digital.axioralab.com/"
+                        class="text-2xl font-bold text-foreground hover:text-secondary transition-colors py-1"
+                        >Axiora Digital</a
+                    >
+                </div>
+
+                <div class="flex flex-col gap-2 border-b border-border pb-6">
+                    <h3
+                        class="text-xs font-black text-accent uppercase tracking-widest mb-2"
+                    >
+                        Education
+                    </h3>
+                    <a
+                        href="https://www.axiorablogs.com"
+                        class="text-2xl font-bold text-foreground hover:text-accent transition-colors py-1"
+                        >Axiora Blogs</a
+                    >
+                </div>
+
+                <div class="flex flex-col gap-4 pb-6">
+                    <h3
+                        class="text-xs font-black text-foreground/40 uppercase tracking-widest mb-1"
+                    >
+                        Other Tools
+                    </h3>
+                    <a
+                        href="https://quotes.axioralabs.com/"
+                        class="text-xl font-bold text-foreground hover:text-primary transition-colors"
+                        >Axiora Quotes</a
+                    >
+                    <a
+                        href="https://path.axioralabs.com/"
+                        class="text-xl font-bold text-foreground hover:text-primary transition-colors"
+                        >Axiora Path</a
+                    >
+                    <a
+                        href="https://games.axioralabs.com/"
+                        class="text-xl font-bold text-foreground hover:text-primary transition-colors"
+                        >Axiora Games</a
+                    >
+                </div>
+
+                <div class="mt-auto pt-8">
+                    <a
+                        href="https://www.axioralabs.com"
+                        class="flex justify-center items-center w-full bg-foreground text-white py-4 rounded-2xl font-bold text-lg hover:bg-primary transition-colors saas-shadow"
+                    >
+                        Visit Axiora Labs
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        {/* Main Application Content */}
+        <main class="flex-1 w-full flex flex-col items-center relative z-10">
+            <slot />
+        </main>
+
+        {/* Proper Luxury Footer */}
+        <footer
+            class="w-full mt-32 bg-white/40 backdrop-blur-md border-t border-white shadow-[0_-4px_20px_rgba(0,0,0,0.02)] pt-20 pb-10 relative z-10"
+        >
+            <div
+                class="container mx-auto px-6 md:px-12 flex flex-col items-center text-center gap-8"
+            >
+                <a
+                    href="https://www.axioralabs.com"
+                    target="_blank"
+                    class="inline-block hover:scale-105 transition-transform duration-500 ease-out saas-glow rounded-full"
+                >
+                    <img
+                        src="/axiora-logo.png"
+                        alt="Axiora Labs"
+                        class="h-12 w-auto object-contain"
+                    />
+                </a>
+                <p
+                    class="text-foreground/70 text-base md:text-lg max-w-2xl font-medium leading-relaxed"
+                >
+                    Developed by <strong
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary font-bold"
+                        >Axiora Labs</strong
+                    >, the fastest-growing technology business partner helping
+                    small and medium scale enterprises grow faster through
+                    intelligent engineering.
+                </p>
+                <div class="w-24 h-[2px] bg-border mt-4 mb-2"></div>
+                <p
+                    class="text-foreground/40 text-sm font-semibold tracking-wide"
+                >
+                    © {new Date().getFullYear()} Axiora Labs (Pvt) Ltd. All rights
+                    reserved.
+                </p>
+            </div>
+        </footer>
+
+        {/* Vanilla JS for Mobile Menu Logic */}
+        <script>
+            const btn = document.getElementById("mobile-menu-btn");
+            const overlay = document.getElementById("mobile-overlay");
+            const iconMenu = document.getElementById("icon-menu");
+            const iconClose = document.getElementById("icon-close");
+            let isMenuOpen = false;
+
+            if (btn && overlay && iconMenu && iconClose) {
+                btn.addEventListener("click", () => {
+                    isMenuOpen = !isMenuOpen;
+
+                    if (isMenuOpen) {
+                        // Open Menu
+                        overlay.classList.remove(
+                            "opacity-0",
+                            "pointer-events-none",
+                            "translate-y-[-10px]",
+                        );
+                        overlay.classList.add(
+                            "opacity-100",
+                            "pointer-events-auto",
+                            "translate-y-0",
+                        );
+
+                        // Animate Icons
+                        iconMenu.classList.add("opacity-0", "scale-50");
+                        iconClose.classList.remove("opacity-0", "scale-50");
+
+                        // Prevent background scrolling
+                        document.body.style.overflow = "hidden";
+                    } else {
+                        // Close Menu
+                        overlay.classList.add(
+                            "opacity-0",
+                            "pointer-events-none",
+                            "translate-y-[-10px]",
+                        );
+                        overlay.classList.remove(
+                            "opacity-100",
+                            "pointer-events-auto",
+                            "translate-y-0",
+                        );
+
+                        // Animate Icons
+                        iconMenu.classList.remove("opacity-0", "scale-50");
+                        iconClose.classList.add("opacity-0", "scale-50");
+
+                        // Restore background scrolling
+                        document.body.style.overflow = "";
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,159 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import ColorConverterComponent from "@/components/tools/ColorConverter.tsx";
+
+// MAGIC: Automatically adds this to the homepage directory
+export const toolMeta = {
+    id: "color-conv",
+    name: "Color Converter",
+    desc: "Seamlessly translate colors between HEX, RGB, and HSL formats in real-time.",
+    category: "Design",
+    icon: "Palette", // Using the Palette icon from Lucide
+};
+---
+
+<Layout
+    title={`${toolMeta.name} | Premium Tools by Axiora`}
+    description={toolMeta.desc}
+>
+    <div class="container mx-auto px-4 py-8 md:py-16">
+        {/* SaaS Back Button */}
+        <div class="max-w-5xl mx-auto mb-12">
+            <a
+                href="/"
+                class="inline-flex items-center gap-3 text-foreground/50 hover:text-primary font-semibold text-sm tracking-wide transition-all group w-fit outline-none focus-visible:ring-4 focus-visible:ring-primary/30 rounded-full pr-6 bg-white/50 backdrop-blur-md border border-white saas-shadow hover:saas-shadow-hover"
+            >
+                <div
+                    class="w-10 h-10 bg-white rounded-full flex items-center justify-center saas-shadow group-hover:bg-primary/5 transition-colors"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="group-hover:-translate-x-1 transition-transform duration-300"
+                    >
+                        <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                </div>
+                Back to Directory
+            </a>
+        </div>
+
+        {/* The React Component */}
+        <ColorConverterComponent client:only="react" />
+
+        {/* Premium SEO / Context Block */}
+        <article
+            class="max-w-5xl mx-auto mt-24 flex flex-col gap-12 glass-card rounded-[2.5rem] p-10 md:p-16 relative overflow-hidden"
+        >
+            {/* Ambient Light Orbs */}
+            <div
+                class="absolute -top-32 -left-32 w-96 h-96 bg-secondary/5 blur-3xl rounded-full pointer-events-none"
+            >
+            </div>
+
+            <div class="space-y-4 relative z-10 max-w-3xl">
+                <h2
+                    class="text-3xl md:text-4xl font-extrabold tracking-tight text-foreground"
+                >
+                    Understanding <span class="text-gradient"
+                        >Color Formats.</span
+                    >
+                </h2>
+                <p
+                    class="text-lg text-foreground/60 leading-relaxed font-medium"
+                >
+                    Different development and design environments require
+                    specific color formatting. Our converter uses native browser
+                    math to translate a single color across all standard web
+                    formats instantaneously, ensuring perfect accuracy across
+                    platforms.
+                </p>
+            </div>
+
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10 mt-4"
+            >
+                {/* Info Card 1 */}
+                <div
+                    class="flex flex-col gap-4 bg-background/50 rounded-[1.5rem] p-8 border border-border/50 hover:border-primary/20 transition-colors group"
+                >
+                    <div
+                        class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-primary font-extrabold text-xl saas-shadow mb-2 group-hover:scale-110 transition-transform"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            ><path d="m4 12 8-8 8 8"></path><path d="M12 4v16"
+                            ></path></svg
+                        >
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-foreground tracking-tight"
+                    >
+                        HEX & RGB
+                    </h3>
+                    <p
+                        class="text-base text-foreground/60 font-medium leading-relaxed"
+                    >
+                        <strong>HEX</strong> (Hexadecimal) is the industry standard
+                        for HTML and CSS, utilizing base-16 math to represent colors
+                        concisely. <strong>RGB</strong> (Red, Green, Blue) is the
+                        native format for digital displays and is heavily relied upon
+                        in CSS variables for fine-tuned opacity (alpha) control.
+                    </p>
+                </div>
+
+                {/* Info Card 2 */}
+                <div
+                    class="flex flex-col gap-4 bg-background/50 rounded-[1.5rem] p-8 border border-border/50 hover:border-secondary/20 transition-colors group"
+                >
+                    <div
+                        class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-secondary font-extrabold text-xl saas-shadow mb-2 group-hover:scale-110 transition-transform"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            ><path d="m12 14 4-4"></path><path
+                                d="M3.34 19a10 10 0 1 1 17.32 0"></path></svg
+                        >
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-foreground tracking-tight"
+                    >
+                        The Power of HSL
+                    </h3>
+                    <p
+                        class="text-base text-foreground/60 font-medium leading-relaxed"
+                    >
+                        <strong>HSL</strong> (Hue, Saturation, Lightness) is rapidly
+                        becoming the preferred format for modern frontend developers.
+                        It is mathematically intuitive—allowing you to create hover
+                        states or dark modes by simply shifting the Lightness percentage,
+                        rather than recalculating complex RGB arrays.
+                    </p>
+                </div>
+            </div>
+        </article>
+    </div>
+</Layout>

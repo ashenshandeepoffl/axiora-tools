@@ -1,0 +1,156 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import WordCounterComponent from "@/components/tools/WordCounter.tsx";
+
+// MAGIC: Automatically adds this to the homepage directory
+export const toolMeta = {
+    id: "word-cnt",
+    name: "Word Counter",
+    desc: "Instantly count words, characters, and estimate reading time for any text document.",
+    category: "Text",
+    icon: "FileText",
+};
+---
+
+<Layout
+    title={`${toolMeta.name} | Premium Tools by Axiora`}
+    description={toolMeta.desc}
+>
+    <div class="container mx-auto px-4 py-8 md:py-16">
+        {/* SaaS Back Button */}
+        <div class="max-w-5xl mx-auto mb-12">
+            <a
+                href="/"
+                class="inline-flex items-center gap-3 text-foreground/50 hover:text-primary font-semibold text-sm tracking-wide transition-all group w-fit outline-none focus-visible:ring-4 focus-visible:ring-primary/30 rounded-full pr-6 bg-white/50 backdrop-blur-md border border-white saas-shadow hover:saas-shadow-hover"
+            >
+                <div
+                    class="w-10 h-10 bg-white rounded-full flex items-center justify-center saas-shadow group-hover:bg-primary/5 transition-colors"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="group-hover:-translate-x-1 transition-transform duration-300"
+                    >
+                        <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                </div>
+                Back to Directory
+            </a>
+        </div>
+
+        {/* The React Component */}
+        <WordCounterComponent client:only="react" />
+
+        {/* Premium SEO / Context Block */}
+        <article
+            class="max-w-5xl mx-auto mt-24 flex flex-col gap-12 glass-card rounded-[2.5rem] p-10 md:p-16 relative overflow-hidden"
+        >
+            <div
+                class="absolute -top-32 -left-32 w-96 h-96 bg-primary/5 blur-3xl rounded-full pointer-events-none"
+            >
+            </div>
+
+            <div class="space-y-4 relative z-10 max-w-4xl">
+                <h2
+                    class="text-3xl md:text-4xl font-extrabold tracking-tight text-foreground"
+                >
+                    Real-time <span class="text-gradient">text analytics.</span>
+                </h2>
+                <p
+                    class="text-lg text-foreground/60 leading-relaxed font-medium"
+                >
+                    This tool processes large blocks of text instantly as you
+                    type. Because we do not rely on server-side APIs to count
+                    characters, massive documents can be analyzed with absolute
+                    zero latency, ensuring a fluid editing experience.
+                </p>
+            </div>
+
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10 mt-4"
+            >
+                {/* Info Card 1 */}
+                <div
+                    class="flex flex-col gap-4 bg-background/50 rounded-[1.5rem] p-8 border border-border/50 hover:border-primary/20 transition-colors group"
+                >
+                    <div
+                        class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-primary font-extrabold text-xl saas-shadow mb-2 group-hover:scale-110 transition-transform"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            ><circle cx="12" cy="12" r="10"></circle><polyline
+                                points="12 6 12 12 16 14"></polyline></svg
+                        >
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-foreground tracking-tight"
+                    >
+                        Reading Time Calculation
+                    </h3>
+                    <p
+                        class="text-base text-foreground/60 font-medium leading-relaxed mb-4"
+                    >
+                        Our engine calculates reading time by dividing the total
+                        word count by an average adult reading speed of <strong
+                            >225 words per minute</strong
+                        >. This provides a highly accurate estimate for pacing
+                        blog posts, essays, and long-form articles.
+                    </p>
+                </div>
+
+                {/* Info Card 2 */}
+                <div
+                    class="flex flex-col gap-4 bg-background/50 rounded-[1.5rem] p-8 border border-border/50 hover:border-secondary/20 transition-colors group"
+                >
+                    <div
+                        class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-secondary font-extrabold text-xl saas-shadow mb-2 group-hover:scale-110 transition-transform"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            ><path
+                                d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                            ></path></svg
+                        >
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-foreground tracking-tight"
+                    >
+                        Zero Data Retention
+                    </h3>
+                    <p
+                        class="text-base text-foreground/60 font-medium leading-relaxed mb-4"
+                    >
+                        We respect your confidentiality. Whether you are
+                        analyzing a casual tweet, a highly confidential legal
+                        contract, or an unpublished manuscript, nothing you
+                        paste into this text area is ever transmitted, logged,
+                        or saved to any database.
+                    </p>
+                </div>
+            </div>
+        </article>
+    </div>
+</Layout>
