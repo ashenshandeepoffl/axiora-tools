@@ -11,7 +11,7 @@ const { title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta
@@ -25,21 +25,20 @@ const { title, description } = Astro.props;
     <body
         class="min-h-screen flex flex-col font-sans antialiased pt-24 md:pt-28 selection:bg-primary selection:text-white relative overflow-x-hidden"
     >
-        {/* Vibrant SaaS Mesh Gradient Background */}
-        <div class="fixed inset-0 z-[-1] h-full w-full bg-background">
-            {/* Top Center Indigo Glow */}
+        {/* Hardware Accelerated SaaS Mesh Gradient Background */}
+        <div
+            class="fixed inset-0 z-[-1] h-full w-full bg-background transform-gpu pointer-events-none"
+        >
             <div
-                class="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(79,70,229,0.08),rgba(255,255,255,0))]"
+                class="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(0,95,153,0.08),rgba(255,255,255,0))] transform-gpu"
             >
             </div>
-            {/* Bottom Right Purple Glow */}
             <div
-                class="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_120%_100%,rgba(124,58,237,0.08),rgba(255,255,255,0))]"
+                class="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_120%_100%,rgba(0,179,179,0.08),rgba(255,255,255,0))] transform-gpu"
             >
             </div>
-            {/* Bottom Left Cyan Glow */}
             <div
-                class="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_-20%_100%,rgba(0,194,255,0.08),rgba(255,255,255,0))]"
+                class="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_-20%_100%,rgba(102,204,255,0.08),rgba(255,255,255,0))] transform-gpu"
             >
             </div>
         </div>
@@ -48,7 +47,7 @@ const { title, description } = Astro.props;
 
         {/* Premium Glass Navigation Header */}
         <header
-            class="fixed top-0 left-0 right-0 h-20 md:h-24 glass-card z-50 flex items-center transition-all duration-300"
+            class="fixed top-0 left-0 right-0 h-20 md:h-24 glass-card z-50 flex items-center transition-all duration-300 transform-gpu"
         >
             <div
                 class="container mx-auto px-6 md:px-12 flex justify-between items-center w-full"
@@ -94,11 +93,10 @@ const { title, description } = Astro.props;
                                 class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-50"
                             >
                                 <div
-                                    class="w-60 bg-white border border-white/50 rounded-[1.25rem] saas-shadow p-2 flex flex-col gap-1 relative overflow-hidden"
+                                    class="w-60 bg-white border border-border/50 rounded-[1.25rem] saas-shadow p-2 flex flex-col gap-1 relative overflow-hidden"
                                 >
-                                    {/* Subtle internal glow */}
                                     <div
-                                        class="absolute -top-10 -right-10 w-24 h-24 bg-primary/10 blur-2xl rounded-full"
+                                        class="absolute -top-10 -right-10 w-24 h-24 bg-primary/10 blur-2xl rounded-full transform-gpu"
                                     >
                                     </div>
                                     <a
@@ -141,10 +139,10 @@ const { title, description } = Astro.props;
                                 class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-50"
                             >
                                 <div
-                                    class="w-60 bg-white border border-white/50 rounded-[1.25rem] saas-shadow p-2 flex flex-col gap-1 relative overflow-hidden"
+                                    class="w-60 bg-white border border-border/50 rounded-[1.25rem] saas-shadow p-2 flex flex-col gap-1 relative overflow-hidden"
                                 >
                                     <div
-                                        class="absolute -top-10 -right-10 w-24 h-24 bg-secondary/10 blur-2xl rounded-full"
+                                        class="absolute -top-10 -right-10 w-24 h-24 bg-secondary/10 blur-2xl rounded-full transform-gpu"
                                     >
                                     </div>
                                     <a
@@ -187,10 +185,10 @@ const { title, description } = Astro.props;
                                 class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-50"
                             >
                                 <div
-                                    class="w-60 bg-white border border-white/50 rounded-[1.25rem] saas-shadow p-2 flex flex-col gap-1 relative overflow-hidden"
+                                    class="w-60 bg-white border border-border/50 rounded-[1.25rem] saas-shadow p-2 flex flex-col gap-1 relative overflow-hidden"
                                 >
                                     <div
-                                        class="absolute -top-10 -right-10 w-24 h-24 bg-accent/10 blur-2xl rounded-full"
+                                        class="absolute -top-10 -right-10 w-24 h-24 bg-accent/10 blur-2xl rounded-full transform-gpu"
                                     >
                                     </div>
                                     <a
@@ -227,10 +225,10 @@ const { title, description } = Astro.props;
                                 class="absolute top-full right-0 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-50"
                             >
                                 <div
-                                    class="w-60 bg-white border border-white/50 rounded-[1.25rem] saas-shadow p-2 flex flex-col gap-1 relative overflow-hidden"
+                                    class="w-60 bg-white border border-border/50 rounded-[1.25rem] saas-shadow p-2 flex flex-col gap-1 relative overflow-hidden"
                                 >
                                     <div
-                                        class="absolute -top-10 -right-10 w-24 h-24 bg-primary/10 blur-2xl rounded-full"
+                                        class="absolute -top-10 -right-10 w-24 h-24 bg-primary/10 blur-2xl rounded-full transform-gpu"
                                     >
                                     </div>
                                     <a
@@ -313,15 +311,14 @@ const { title, description } = Astro.props;
         {/* FULL SCREEN MOBILE NAVIGATION OVERLAY */}
         <div
             id="mobile-overlay"
-            class="fixed inset-0 z-40 bg-white/95 backdrop-blur-2xl opacity-0 pointer-events-none translate-y-[-10px] transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] overflow-y-auto lg:hidden"
+            class="fixed inset-0 z-40 bg-white/95 backdrop-blur-2xl opacity-0 pointer-events-none translate-y-[-10px] transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] overflow-y-auto lg:hidden transform-gpu"
         >
-            {/* Ambient glows inside mobile menu */}
             <div
-                class="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-3xl rounded-full pointer-events-none"
+                class="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-3xl rounded-full pointer-events-none transform-gpu"
             >
             </div>
             <div
-                class="absolute bottom-0 left-0 w-64 h-64 bg-secondary/5 blur-3xl rounded-full pointer-events-none"
+                class="absolute bottom-0 left-0 w-64 h-64 bg-secondary/5 blur-3xl rounded-full pointer-events-none transform-gpu"
             >
             </div>
 
@@ -418,7 +415,7 @@ const { title, description } = Astro.props;
 
         {/* Proper Luxury Footer */}
         <footer
-            class="w-full mt-32 bg-white/40 backdrop-blur-md border-t border-white shadow-[0_-4px_20px_rgba(0,0,0,0.02)] pt-20 pb-10 relative z-10"
+            class="w-full mt-32 bg-white/40 backdrop-blur-md border-t border-white shadow-[0_-4px_20px_rgba(0,0,0,0.02)] pt-20 pb-10 relative z-10 transform-gpu"
         >
             <div
                 class="container mx-auto px-6 md:px-12 flex flex-col items-center text-center gap-8"

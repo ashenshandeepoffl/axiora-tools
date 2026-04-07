@@ -12,7 +12,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Map the CSS variables to Tailwind v4 theme */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -41,46 +40,29 @@
 
 @layer base {
   :root {
-    /* Axiora Base: Clean, minimal, modern Pure White */
     --background: #FFFFFF;
-
-    /* Text Color: Dark Gray / Charcoal for readability on white */
     --foreground: #333333;
-
-    /* Cards remain pure white */
     --card: #FFFFFF;
     --card-foreground: #333333;
-
     --popover: #FFFFFF;
     --popover-foreground: #333333;
 
     /* AXIORA BRAND PALETTE */
-    /* Primary: Deep Blue (Trust, intelligence, innovation) */
     --primary: #005F99;
     --primary-foreground: #FFFFFF;
-
-    /* Secondary: Light Teal (Creativity, modernity, freshness) */
     --secondary: #00B3B3;
     --secondary-foreground: #FFFFFF;
-
-    /* Accent: Sky Blue */
     --accent: #66CCFF;
     --accent-foreground: #333333;
 
-    /* Muted: Very faint Deep Blue tint for subtle backgrounds */
     --muted: #F0F5F9;
     --muted-foreground: #666666;
-
     --destructive: #EF4444;
     --destructive-foreground: #FFFFFF;
-
     --border: #E5E7EB;
     --input: #E5E7EB;
-
     --ring: #005F99;
-    /* Deep Blue focus rings */
 
-    /* Extreme rounding for that bubbly, modern tech SaaS feel */
     --radius: 1.5rem;
   }
 }
@@ -96,7 +78,6 @@
     letter-spacing: -0.01em;
   }
 
-  /* Headings strictly use Axiora Deep Blue for premium visual hierarchy */
   h1,
   h2,
   h3,
@@ -110,39 +91,41 @@
 }
 
 /* =========================================
-  THE AXIORA SAAS MAGIC (Custom Luxury Utilities) 
+  THE AXIORA SAAS MAGIC (GPU-Accelerated Utilities) 
   =========================================
 */
 @layer utilities {
-
-  /* Axiora Brand Gradient: Deep Blue -> Light Teal -> Sky Blue */
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-[#005F99] via-[#00B3B3] to-[#66CCFF];
   }
 
-  /* Axiora Call-to-action blocks */
   .bg-gradient-saas {
     @apply bg-gradient-to-br from-[#005F99] to-[#00B3B3];
   }
 
-  /* Axiora Floating Shadows (Deep Blue tint instead of gray/black) */
+  /* Hardware Acceleration applied to heavy shadows */
   .saas-shadow {
+    @apply transform-gpu;
     box-shadow: 0 10px 40px -10px rgba(0, 95, 153, 0.12), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+    backface-visibility: hidden;
   }
 
-  /* Lift effect on hover (Light Teal tint) */
   .saas-shadow-hover {
+    @apply transform-gpu;
     box-shadow: 0 20px 40px -10px rgba(0, 179, 179, 0.2), 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    backface-visibility: hidden;
   }
 
-  /* Ambient glowing Axiora Light Teal orbs behind components */
   .saas-glow {
+    @apply transform-gpu;
     box-shadow: 0 0 60px 20px rgba(0, 179, 179, 0.15);
+    backface-visibility: hidden;
   }
 
-  /* True Glassmorphism - Safely formatted to prevent Vite compilation errors */
+  /* Hardware Acceleration applied to complex blurs */
   .glass-card {
-    @apply bg-white/70 backdrop-blur-2xl border border-white;
+    @apply bg-white/70 backdrop-blur-2xl border border-white transform-gpu;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 8px 32px rgba(0, 0, 0, 0.04);
+    backface-visibility: hidden;
   }
 }
